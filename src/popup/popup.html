@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Amazon Product Scraper</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+</head>
+<body class="bg-gray-100 text-gray-800">
+  <div class="w-96 p-4">
+    <div class="flex items-center justify-between mb-3">
+      <h1 class="text-lg font-semibold">Amazon Scraper</h1>
+      <button id="scrapeButton" class="px-3 py-1 text-sm rounded bg-blue-600 text-white hover:bg-blue-700">Scrape</button>
+    </div>
+
+    <p id="status" class="text-sm text-gray-600 mb-3">Open an Amazon product page and click Scrape.</p>
+
+    <div id="result" class="h-96 overflow-auto bg-white border border-gray-200 rounded p-3 text-xs leading-relaxed">
+      <div class="text-gray-500">No data scraped yet.</div>
+    </div>
+  </div>
+
+  <script src="./popup.js"></script>
+</body>
+</html>
