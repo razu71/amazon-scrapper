@@ -65,19 +65,17 @@
   }
 
   function extractDescription() {
-    const description = getText("#productDescription");
-    if (description) {
-      return description;
+    const bulletsRoot = document.querySelector("#feature-bullets");
+    if (bulletsRoot) {
+      return cleanText(bulletsRoot.outerHTML || "");
     }
 
-    const bulletsRoot = document.querySelector("#feature-bullets");
-    if (!bulletsRoot) {
-      return "";
+    const descriptionRoot = document.querySelector("#productDescription");
+    if (descriptionRoot) {
+      return cleanText(descriptionRoot.outerHTML || "");
     }
-    const bulletItems = [...bulletsRoot.querySelectorAll("li span.a-list-item")]
-      .map((el) => cleanText(el.textContent || ""))
-      .filter(Boolean);
-    return bulletItems.join(" ");
+
+    return "";
   }
 
   function extractBulletFeatures() {
